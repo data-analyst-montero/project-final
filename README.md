@@ -1,6 +1,6 @@
-# 🎬 Análisis Exploratorio de Datos de Películas (TMDB + IMDb)
+# 1.🎬 Análisis Exploratorio de Datos de Películas (TMDB + IMDb)
 
-## 📖 Descripción del proyecto
+## 2.📖 Descripción del proyecto
 
 Este proyecto consiste en la realización de un **Análisis Exploratorio de Datos ** sobre una recopilación de información cinematográfica procedente de dos conjuntos de datos relacionados mediante el identificador **IMDb (`imdb_id`)**.
 
@@ -8,7 +8,7 @@ El objetivo principal es integrar ambos conjuntos de datos, realizar un proceso 
 
 El proyecto se ha desarrollado utilizando **Python** y la biblioteca **Pandas** para el tratamiento de los datos, complementando el análisis con diferentes librerías de visualización para facilitar la interpretación de los resultados.
 
-# 🎯 Objetivos
+### 🎯 Objetivos
 
 Los principales objetivos del proyecto son:
 
@@ -22,7 +22,7 @@ Los principales objetivos del proyecto son:
 - Elaborar visualizaciones que permitan extraer conclusiones relevantes.
 - Generar un dashboard que facilite la interpretación de la información.
 
-# 📝 Contexto del análisis
+### 📝 Contexto del análisis
 
 La industria cinematográfica genera una enorme cantidad de información relacionada con la producción, distribución y recepción de las películas.
 
@@ -37,9 +37,7 @@ Analizar estos datos permite responder preguntas como:
 
 Responder estas preguntas facilita comprender mejor el comportamiento de la industria y descubrir patrones ocultos dentro de los datos.
 
----
-
-# ❓ Problema que se resuelve
+### ❓ Problema que se resuelve
 
 Los datos originales presentan diversos problemas habituales en conjuntos de datos reales:
 
@@ -52,7 +50,7 @@ Los datos originales presentan diversos problemas habituales en conjuntos de dat
 
 El proyecto resuelve estos problemas mediante un proceso de limpieza, integración y transformación de los datos, obteniendo un único dataset preparado para realizar análisis estadísticos y visualizaciones de calidad.
 
-# 📂 Conjuntos de datos
+### 📂 Conjuntos de datos
 
 El proyecto utiliza dos datasets:
 
@@ -86,9 +84,40 @@ Contiene información adicional relacionada con la producción:
 - production_countries
 - spoken_languages
 
-Ambos datasets se integran mediante la clave común **imdb_id**.
+Ambos datasets se integran mediante la clave común **imdb_id**
 
-# 🛠 Herramientas utilizadas
+# 3. 📁 Estructura del proyecto
+
+```
+Proyecto/
+│
+├── data/
+│   ├──── raw
+│   │     ├── movies_metadata.csv
+│   │     └── tmdb_movie_dataset_v11.csv
+│   └──── output
+│         └── dataset_final.csv
+│
+│
+├── src/
+│   ├── limpieza_avanzada.py
+│   ├── analisis_estadistico.py
+│   └── dashboard.py
+│
+├── notebook/
+│   └── 01-Analisis-preliminar.ipynb
+│
+│
+├── results/
+│   ├── graficos
+│   └── Informe de resultados.doc/
+│
+├── README.md
+│
+└── requirements.txt
+```
+
+## 4. 🛠 Instalación y requisitos
 
 El proyecto se desarrolló utilizando:
 
@@ -99,7 +128,7 @@ El proyecto se desarrolló utilizando:
 - Seaborn
 - Visual Studio Code
 
-# 🔄 Proceso realizado
+### 🔄 Proceso realizado
 
 El proyecto sigue las siguientes fases:
 
@@ -115,7 +144,7 @@ El proyecto sigue las siguientes fases:
 10. Visualización de los resultados.
 11. Elaboración del dashboard.
 
-# 🧹 Transformaciones realizadas
+## 🧹 Transformaciones realizadas
 
 Durante el proceso de limpieza se realizaron, entre otras, las siguientes transformaciones:
 
@@ -131,9 +160,7 @@ Durante el proceso de limpieza se realizaron, entre otras, las siguientes transf
   - Año de estreno
   - Década de estreno
 
----
-
-# 📊 Técnicas empleadas
+## 📊 Técnicas empleadas
 
 Para llevar a cabo el análisis se utilizaron diferentes técnicas de análisis de datos:
 
@@ -150,7 +177,7 @@ Para llevar a cabo el análisis se utilizaron diferentes técnicas de análisis 
 - Creación de nuevas variables
 - Normalización de datos
 
-### Análisis descriptivo
+## Análisis descriptivo
 
 Se calcularon medidas estadísticas como:
 
@@ -184,7 +211,7 @@ Se utilizaron gráficos como:
 - Heatmaps
 - Gráficos de correlación
 
-# 📈 Resultados esperados
+# 5. 📈 Resultados esperados
 
 El análisis permite obtener información útil sobre:
 
@@ -196,31 +223,9 @@ El análisis permite obtener información útil sobre:
 - Influencia de la popularidad en las valoraciones.
 - Comportamiento temporal de la producción cinematográfica.
 
-# 📁 Estructura del proyecto
+Puede encontrar los resultados y conclusiones en el informe localizado en results/Informe de resultados.doc
 
-```
-Proyecto/
-│
-├── data/
-│   ├── movies_metadata.csv
-│   ├── tmdb_movie_dataset_v11.csv
-│   └── dataset_final.csv
-│
-├── scripts/
-│   ├── limpieza_avanzada.py
-│   ├── analisis_estadistico.py
-│   └── dashboard.py
-│
-├── graficos/
-│
-├── informe/
-│
-├── README.md
-│
-└── requirements.txt
-```
-
-# 🚀 Cómo ejecutar el proyecto
+## 6. 🚀 Cómo ejecutar el proyecto
 
 1. Clonar el repositorio.
 
@@ -252,10 +257,10 @@ python analisis_estadistico.py
 python dashboard.py
 ```
 
-### 9. 🤝 Contribuciones
+## 7. 🤝 Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, por favor abre un pull request o una issue.
 
-### 10. 👩🏻‍💻 Autor
+## 8. 👩🏻‍💻 Autor
 
 Giselle Montero González (https://github.com/data-analyst-montero)
