@@ -98,7 +98,6 @@ Proyecto/
 │   └──── output
 │         └── dataset_final.csv
 │
-│
 ├── src/
 │   ├── limpieza_avanzada.py
 │   ├── analisis_estadistico.py
@@ -112,9 +111,8 @@ Proyecto/
 │   ├── graficos
 │   └── Informe de resultados.doc/
 │
-├── README.md
-│
-└── requirements.txt
+└── README.md
+
 ```
 
 ## 4. 🛠 Instalación y requisitos
@@ -233,25 +231,20 @@ Puede encontrar los resultados y conclusiones en el informe localizado en result
 git clone <repositorio>
 ```
 
-2. Instalar las dependencias.
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Ejecutar el proceso de limpieza.
+2. Ejecutar el proceso de limpieza.
 
 ```bash
 python limpieza_avanzada.py
+
 ```
 
-4. Ejecutar el análisis estadístico.
+3. Ejecutar el análisis estadístico.
 
 ```bash
 python analisis_estadistico.py
 ```
 
-5. Generar el dashboard.
+4. Generar el dashboard.
 
 ```bash
 python dashboard.py
