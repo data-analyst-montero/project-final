@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Configuración
 
@@ -14,8 +15,6 @@ OUTPUT_FILE = "dataset_final.csv"
 
 # Cargar los datasets originales
 
-print("Cargando datasets...")
-
 movies = pd.read_csv(
     "../data/raw/movies_metadata.csv",
     low_memory=False
@@ -26,7 +25,7 @@ tmdb = pd.read_csv(
     low_memory=False
 )
 
-print("\nTamaño inicial")
+print("\n2 datasets cargados")
 
 print(f"movies_metadata: {movies.shape}")
 print(f"tmdb_movie_dataset_v11: {tmdb.shape}")
@@ -206,10 +205,10 @@ print("Dataset final")
 print("-----------------------------------")
 print(f"Filas: {dataset_final.shape[0]}")
 print(f"Columnas: {dataset_final.shape[1]}")
-print("\nColumnas")
 
-for columna in dataset_final.columns:
-    print(columna)
+
+#for columna in dataset_final.columns:
+#    print(columna)
 
 # Guardar el dataset final limpio
 
@@ -219,9 +218,9 @@ dataset_final.to_csv(
     encoding="utf-8"
 )
 
-print("\nArchivo generado correctamente")
+print("\nArchivo generado: dataset_final.csv en la ruta: data/output/")
 
-print("\n--- Fase 3: Análisis Descriptivo ---")
+print("\n--- Análisis Descriptivo ---")
 # Estadísticos clave de las variables numéricas principales
 variables_interes = ['budget', 'revenue', 'profit', 'runtime', 'vote_average', 'vote_count', 'roi']
 print(dataset_final[variables_interes].describe())
@@ -231,7 +230,11 @@ print("\nMatriz de Correlación:")
 correlacion = dataset_final[variables_interes].corr()
 print(correlacion)
 
-print("\n--- Fase 4: Visualización de Datos ---")
+ruta = "../results/graficos"
+if not os.path.exists(ruta):
+    os.makedirs(ruta)
+
+print("\n--- Visualización de Datos ---")
 
 # Gráfico 1: Relación Presupuesto vs Recaudación (Scatter Plot)
 plt.figure()
