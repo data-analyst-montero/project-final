@@ -34,14 +34,13 @@ print(f"tmdb_movie_dataset_v11: {tmdb.shape}")
 # Selección de columnas necesarias
 
 movies = movies[
-    [
-        "adult",
+    [       
         "imdb_id",
-        "homepage",
         "original_language",
         "original_title",
         "overview",
         "popularity",
+        "adult",
         "release_date",
         "revenue",
         "runtime",
@@ -50,6 +49,7 @@ movies = movies[
         "video",
         "vote_average",
         "vote_count",
+        "homepage",
     ]
 ]
 
@@ -64,9 +64,7 @@ tmdb = tmdb[
     ]
 ]
 
-# =========================================================
-# LIMPIAR imdb_id
-# =========================================================
+# Limpiar imdb_id
 
 movies["imdb_id"] = (
     movies["imdb_id"]
@@ -157,8 +155,7 @@ dataset_final = dataset_final.sort_values(
 # Organizar columnas
 
 dataset_final = dataset_final[
-    [
-        "adult",
+    [        
         "imdb_id",        
         "original_title",
         "original_language",
@@ -176,6 +173,7 @@ dataset_final = dataset_final[
         "status",
         "overview",
         "tagline",
+        "adult",
         "video",
         "homepage"
     ]
@@ -204,7 +202,7 @@ dataset_final['roi'] = np.where(dataset_final['budget'] > 0, dataset_final['reve
 # Columna de beneficio neto
 dataset_final['profit'] = dataset_final['revenue'] - dataset_final['budget']
 
-print("DATASET FINAL")
+print("Dataset final")
 print("-----------------------------------")
 print(f"Filas: {dataset_final.shape[0]}")
 print(f"Columnas: {dataset_final.shape[1]}")
