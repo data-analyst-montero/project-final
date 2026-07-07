@@ -44,11 +44,9 @@ movies = movies[
         "revenue",
         "runtime",
         "status",
-        "tagline",
         "video",
         "vote_average",
-        "vote_count",
-        "homepage",
+        "vote_count",        
     ]
 ]
 
@@ -170,11 +168,9 @@ dataset_final = dataset_final[
         "production_countries",
         "spoken_languages",
         "status",
-        "overview",
-        "tagline",
+        "overview",        
         "adult",
-        "video",
-        "homepage"
+        "video"        
     ]
 ]
 
@@ -192,8 +188,23 @@ dataset_final['runtime'] = pd.to_numeric(dataset_final['runtime'], errors='coerc
 # Para análisis financiero, filtramos temporalmente o creamos una bandera, aquí limpiamos negativos:
 dataset_final = dataset_final[(dataset_final['budget'] >= 0) & (dataset_final['revenue'] >= 0)]
 
-# Creación de Nuevas Columnas (Feature Engineering con Pandas)
+'''
+print("__________")
+print(dataset_final['release_date'].head(10))
+print(dataset_final['release_date'].dtype)
+
 dataset_final['release_year'] = dataset_final['release_date'].dt.year
+print(dataset_final[['release_date', 'release_year']].head(10))
+print(dataset_final['release_year'].dtype)
+print("__________")
+'''
+
+# Creación de Nuevas Columnas (Feature Engineering con Pandas)
+dataset_final['release_year'] = (
+    dataset_final['release_date']
+    .dt.year
+    .astype('Int64')
+)
 
 # Calcular el Retorno de Inversión (ROI). Evitamos división por cero usando np.where
 dataset_final['roi'] = np.where(dataset_final['budget'] > 0, dataset_final['revenue'] / dataset_final['budget'], 0)
@@ -206,9 +217,6 @@ print("-----------------------------------")
 print(f"Filas: {dataset_final.shape[0]}")
 print(f"Columnas: {dataset_final.shape[1]}")
 
-
-#for columna in dataset_final.columns:
-#    print(columna)
 
 # Guardar el dataset final limpio
 

@@ -67,8 +67,6 @@ Contiene información general de las películas:
 - revenue
 - runtime
 - status
-- tagline
-- homepage
 - video
 - vote_average
 - vote_count

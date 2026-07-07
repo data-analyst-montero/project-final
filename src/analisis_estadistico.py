@@ -6,7 +6,7 @@ import seaborn as sns
 
 dataset_final=pd.read_csv("../data/output/dataset_final.csv", low_memory=False)
 
-cat_cols=["original_language","original_title","overview","status","tagline","homepage","video","genres","production_companies","production_countries","spoken_languages"]
+cat_cols=["original_language","original_title","overview","status","video","genres","production_companies","production_countries","spoken_languages"]
 for c in cat_cols:
     if c in dataset_final.columns:
         dataset_final[c]=dataset_final[c].replace(r'^\s*$',np.nan,regex=True).fillna("Unknown")
