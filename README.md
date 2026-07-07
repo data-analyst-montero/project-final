@@ -99,7 +99,7 @@ Proyecto/
 │         └── dataset_final.csv
 │
 ├── src/
-│   ├── limpieza_avanzada.py
+│   ├── limpieza.py
 │   ├── analisis_estadistico.py
 │   └── dashboard.py
 │
@@ -234,7 +234,7 @@ git clone <repositorio>
 2. Ejecutar el proceso de limpieza.
 
 ```bash
-python limpieza_avanzada.py
+python limpieza.py
 
 ```
 
